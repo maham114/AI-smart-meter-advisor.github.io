@@ -137,7 +137,7 @@ Rules:
     # -----------------------------
     API_URL = "https://router.huggingface.co/v1/chat/completions"
     headers = {
-        "Authorization": f"Bearer {os.environ['HF_TOKEN']}",
+        "Authorization": f"Bearer {HF_TOKEN}",
         "Content-Type": "application/json"
     }
     payload = {
@@ -214,6 +214,7 @@ Write a short, engaging paragraph summarizing this week's energy usage.
         explanation = "This week's forecast is ready. Monitor your usage daily and try to save energy on peak days."
 
     return explanation
+
 
 
 
