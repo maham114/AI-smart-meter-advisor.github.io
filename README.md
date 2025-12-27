@@ -28,7 +28,7 @@ Data Visualization: Plotly Express
 
 AI Advice: HuggingFace Large Language Model (deepseek-ai/DeepSeek-V3.2)
 
-Data Storage: CSV (hosted via Git LFS or Google Drive)
+Data Storage: CSV (tracked via Git LFS)
 
 📂 File Structure
 ai-smart-meter-advisor/
@@ -36,6 +36,7 @@ ai-smart-meter-advisor/
 ├─ app.py                 # Main Streamlit app
 ├─ predictor.py           # ML model, data loading, AI advice generation
 ├─ energy_data.csv        # Historical electricity usage data (via Git LFS)
+├─ main.env               # Environment file containing HuggingFace token
 ├─ requirements.txt       # Python dependencies
 ├─ README.md              # Project documentation
 
@@ -43,7 +44,7 @@ ai-smart-meter-advisor/
 
 Clone the repository
 
-git clone https://github.com/maham114/AI-smart-meter-advisor.github.io.git)
+git clone https://github.com/<username>/ai-smart-meter-advisor.git
 cd ai-smart-meter-advisor
 
 
@@ -54,11 +55,12 @@ pip install -r requirements.txt
 
 Set HuggingFace API Token
 
-Create a secrets.toml file in .streamlit/ folder for Streamlit deployment:
+Create a main.env file (if not already present) in the repo root:
 
-[general]
-HF_TOKEN = "your_huggingface_api_token"
+HF_TOKEN=your_huggingface_api_token
 
+
+The app will load the token using Python’s os.environ.
 
 Run the app locally
 
