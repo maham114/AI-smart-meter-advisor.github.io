@@ -7,7 +7,10 @@ import requests
 import os
 from sklearn.ensemble import RandomForestRegressor
 
-os.environ["HF_TOKEN"] = "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"
+import streamlit as st
+HF_TOKEN = st.secrets["general"]["HF_TOKEN"]
+headers = {"Authorization": f"Bearer {HF_TOKEN}", "Content-Type": "application/json"}
+
 
 # CSV is in repo root (Git LFS)
 DATA_PATH = "energy_data.csv"
@@ -211,5 +214,6 @@ Write a short, engaging paragraph summarizing this week's energy usage.
         explanation = "This week's forecast is ready. Monitor your usage daily and try to save energy on peak days."
 
     return explanation
+
 
 
