@@ -18,7 +18,10 @@ CSV_URL = f"https://drive.google.com/file/d/145m5FNnRDQ6o9KMxKhQAWY6Cmp896ANi/vi
 os.environ["HF_TOKEN"] = "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"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, "..", "data", "energy_data.csv")
+
+# CSV is in the project root
+DATA_PATH = os.path.join(BASE_DIR, "..", "energy_data.csv")
+
 
 # -----------------------------
 # Data Loading
@@ -217,3 +220,4 @@ Write a short, engaging paragraph summarizing this week's energy usage.
         explanation = "This week's forecast is ready. Monitor your usage daily and try to save energy on peak days."
 
     return explanation
+
