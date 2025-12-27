@@ -1,21 +1,24 @@
-# -----------------------------
-# Config
-# -----------------------------
+# predictor.py
 import pandas as pd
 import numpy as np
 import requests
 import os
 from sklearn.ensemble import RandomForestRegressor
 
-import streamlit as st
-HF_TOKEN = st.secrets["general"]["HF_TOKEN"]
-headers = {"Authorization": f"Bearer {HF_TOKEN}", "Content-Type": "application/json"}
+# -----------------------------
+# Google Drive direct download
+# -----------------------------
+GDRIVE_FILE_ID = "145m5FNnRDQ6o9KMxKhQAWY6Cmp896ANi"
+CSV_URL = f"https://drive.google.com/file/d/145m5FNnRDQ6o9KMxKhQAWY6Cmp896ANi/view?usp=drive_link"
 
 
-# CSV is in repo root (Git LFS)
-DATA_PATH = "energy_data.csv"
+# -----------------------------
+# Config
+# -----------------------------
+os.environ["HF_TOKEN"] = "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"
 
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "..", "data", "energy_data.csv")
 
 # -----------------------------
 # Data Loading
@@ -137,7 +140,7 @@ Rules:
     # -----------------------------
     API_URL = "https://router.huggingface.co/v1/chat/completions"
     headers = {
-        "Authorization": f"Bearer {HF_TOKEN}",
+        "Authorization": f"Bearer {os.environ['HF_TOKEN']}",
         "Content-Type": "application/json"
     }
     payload = {
@@ -200,7 +203,7 @@ Write a short, engaging paragraph summarizing this week's energy usage.
 """
 
     API_URL = "https://router.huggingface.co/v1/chat/completions"
-    headers = {"Authorization": f"Bearer {HF_TOKEN}", "Content-Type": "application/json"}
+    headers = {"Authorization": f"Bearer {os.environ['HF_TOKEN']}", "Content-Type": "application/json"}
     payload = {"model": "deepseek-ai/DeepSeek-V3.2:novita", "messages": [{"role": "user", "content": prompt}], "max_tokens": 150}
 
     try:
@@ -214,9 +217,3 @@ Write a short, engaging paragraph summarizing this week's energy usage.
         explanation = "This week's forecast is ready. Monitor your usage daily and try to save energy on peak days."
 
     return explanation
-
-
-
-
-
-
