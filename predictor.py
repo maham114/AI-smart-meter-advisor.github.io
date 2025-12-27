@@ -1,26 +1,17 @@
-# predictor.py
+# -----------------------------
+# Config
+# -----------------------------
 import pandas as pd
 import numpy as np
 import requests
 import os
 from sklearn.ensemble import RandomForestRegressor
 
-# -----------------------------
-# Google Drive direct download
-# -----------------------------
-GDRIVE_FILE_ID = "145m5FNnRDQ6o9KMxKhQAWY6Cmp896ANi"
-CSV_URL = f"https://drive.google.com/file/d/145m5FNnRDQ6o9KMxKhQAWY6Cmp896ANi/view?usp=drive_link"
-
-
-# -----------------------------
-# Config
-# -----------------------------
 os.environ["HF_TOKEN"] = "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"
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# CSV is in repo root (Git LFS)
+DATA_PATH = "energy_data.csv"
 
-# CSV is in the project root
-DATA_PATH = os.path.join(BASE_DIR, "..", "energy_data.csv")
 
 
 # -----------------------------
@@ -220,4 +211,5 @@ Write a short, engaging paragraph summarizing this week's energy usage.
         explanation = "This week's forecast is ready. Monitor your usage daily and try to save energy on peak days."
 
     return explanation
+
 
