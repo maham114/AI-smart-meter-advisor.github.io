@@ -43,7 +43,7 @@ ai-smart-meter-advisor/
 
 Clone the repository
 
-git clone https://github.com/<username>/ai-smart-meter-advisor.git
+git clone https://github.com/maham114/AI-smart-meter-advisor.github.io.git)
 cd ai-smart-meter-advisor
 
 
