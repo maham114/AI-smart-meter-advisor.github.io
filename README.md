@@ -80,7 +80,14 @@ Displays data, predictions, and advice in an interactive Streamlit dashboard.
 
 🎨 UI Screenshots
 
-(Add screenshots of your app here, e.g., Hero section, charts, AI tips cards)
+<img width="1891" height="732" alt="image" src="https://github.com/user-attachments/assets/0127d179-9e23-423b-88ba-61dec2a67317" />
+<img width="1897" height="820" alt="image" src="https://github.com/user-attachments/assets/35a97f9d-3b7b-4c5b-bd18-7ea409321e20" />
+<img width="1897" height="717" alt="image" src="https://github.com/user-attachments/assets/ffe61976-ae7d-4f5c-a363-a14c8e0bcb7a" />
+<img width="1801" height="777" alt="image" src="https://github.com/user-attachments/assets/311880b9-22a9-4f87-b144-91724716281c" />
+
+
+
+
 
 💡 Usage Tips
 
